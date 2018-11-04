@@ -1,0 +1,403 @@
+html, body {
+    font-size: 12px;
+    font-family: Verdana;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    padding: 12px;
+    margin: 0px;
+    color: #2c662d;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.container {
+    min-width: 320px;
+    min-height: 420px;
+    margin: 0px auto 0 auto;
+    background: white;
+    border-radius: 0px;
+    padding: 0px;
+    overflow: hidden;
+    border-top: 1px solid silver;
+}
+
+.buttons-categories {
+    margin: 10px 0;
+}
+
+.buttons-categories button {
+    height: 25px;
+    cursor: hand;
+    font-size:0.9em;
+}
+
+.tree {
+    float: left;
+    min-width: 369px;
+    min-height: 420px;
+    border-right: 1px solid silver;
+    overflow: auto;
+    padding: 0px 0;
+}
+
+.category-search {
+    text-align:left;
+}
+
+#category-search-input {
+    box-shadow:inset 0 0 4px #eee;
+    width:120px; margin-left:10px;
+    padding:6px 12px;
+    border-radius:4px;
+    border:1px solid silver;
+    font-size:0.9em;
+}
+
+.data {
+    text-align: left;
+    margin-left: 390px;
+    padding-top: 20px;
+    display: block;
+}
+
+.category-data {
+    font-size: 15px;
+    color: green;
+}
+.subcategories {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    cursor: hand;
+}
+.subcategories a{
+    font-size: 13px;
+    color: green;
+    padding-right: 10px;
+
+}
+
+.meals-list {
+    line-height: 20px;
+    font-size: 13px;
+    padding-left: 15px;
+}
+.meals-list img{
+    width: 10px;
+    cursor: hand;
+    margin: auto 8px;
+}
+
+.meal-data-link {
+    color: #567;
+    cursor: hand;
+    text-decoration: underline;
+    font-size: 12px;
+}
+.meal-data-link:hover {
+    color: #567;
+    cursor: hand;
+    text-decoration: none;
+}
+
+#meal-data {
+    display: none;
+    margin: 20px;
+    padding: 10px;
+    border: 1px green dashed;
+}
+#meal-data.error {
+    border: 1px red dashed;
+}
+#meal-data div {
+    margin: 20px;
+    padding: 10px;
+    border: 1px lightgray dashed;
+}
+#meal-data div.error {
+    border: 1px #ff6b68 dashed;
+}
+#meal-data input {
+    box-shadow:inset 0 0 4px #eee;
+    width:250px;
+    margin-left:10px;
+    padding:6px 12px;
+    border-radius:4px;
+    border:1px solid silver;
+    font-size:0.9em;
+}
+
+#meal-data .error-text{
+    /*margin: 20px;*/
+    padding: 30px;
+    color: red;
+
+}
+
+#menu-block {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.menu-list-data-block {
+    width: 65%;
+    float: left;
+    display: block;
+}
+
+.data-block-title-link {
+    width: 100%;
+    display:block;
+}
+
+.data-block-title {
+    display: inline-block;
+    width: 45%;
+}
+
+.data-block-link {
+    display: inline-block;
+    text-align: right;
+    width: 50%;
+}
+
+.data-block-link a.link {
+    text-decoration: none;
+    cursor: hand;
+    font-size: 16px;
+    color: green;
+    font-style: italic;
+    margin-left: 20px;
+}
+.data-block-link a.logout {
+    text-decoration: none;
+    cursor: hand;
+    font-size: 16px;
+    color: gray;
+    margin-left: 10px;
+    font-style: italic;
+}
+.data-block-link a.profile {
+    text-decoration: none;
+    cursor: hand;
+    font-size: 16px;
+    color: #8acdff;
+    margin-left: 10px;
+    font-style: italic;
+}
+
+
+.data-block-link a:hover{
+    text-decoration: underline;
+}
+
+.menu-list-data {
+
+}
+
+.choisen-menu-block {
+    display: block;
+    width: 30%;
+    float: left;
+}
+
+.choisen-menu-title-link {
+    width: 100%;
+    display:block;
+}
+
+.choisen-menu-title {
+    display: inline-block;
+    width: 73%;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.choisen-menu-manage {
+    display: inline-block;
+    text-align: right;
+    width: 20%;
+}
+
+.menu-range {
+    margin: 10px auto;
+}
+
+.menu-range span {
+    position: relative;
+    top: -4px;
+}
+.menu-range img{
+    width: 16px;
+    margin-bottom: 0px;
+    cursor: hand;
+}
+
+#menu-list ul {
+    padding-left: 16px;
+    font-weight: bold;
+    list-style: circle inside;
+}
+
+#menu-list li {
+    font-weight: normal;
+    padding: auto 10px;
+}
+
+#menu-list li img{
+    width: 8px;
+    cursor: hand;
+    margin: auto 10px;
+}
+
+.menu-list-data-item {
+    border: 1px solid #D3D3D3;
+    margin: 0px 10px 10px 5px;
+    padding: 5px;
+}
+
+.menu-list-data-item-title {
+    display: block;
+    width: 100%;
+}
+
+.menu-list-data-item-title-date {
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    width: 49%;
+}
+.menu-list-data-item-title-manage {
+    width: 50%;
+    display: inline-block;
+    text-align: right;
+}
+
+.menu-list-data-item-title-manage img{
+    width: 12px;
+    cursor: hand;
+    margin: auto 10px;
+}
+
+.menu-list-data-item ul {
+    padding-left: 16px;
+    font-weight: bold;
+    list-style: circle inside;
+}
+
+.menu-list-data-item li {
+    font-weight: normal;
+    padding: auto 10px;
+}
+
+.menu-list-current-date {
+    background: #F0FFF0;
+    border: 1px solid green;
+}
+
+#choisen-menu {
+    display: block;
+    border: 1px solid #D3D3D3;
+    margin: 0px 10px 10px 5px;
+    padding: 5px;
+}
+
+#choisen-menu button {
+    color: white;
+    font-size: 13px;
+    background-color: darkgray;
+    margin: 14px auto;
+    height: 26px;
+    cursor: hand;
+    border-radius:5px;
+}
+#choisen-menu button.save {
+    background-color: #2c662d;
+}
+
+.add-meal-block-manage {
+
+}
+.add-meal-block-manage img {
+    width: 12px;
+    cursor: hand;
+}
+
+#add-meal-block {
+    display: none;
+    border: 1px #228b22 dashed;
+    padding-left: 5px;
+}
+
+#add-meal-block ul {
+    padding-left: 16px;
+    list-style: circle inside;
+}
+#add-meal-block ul li{
+    cursor: hand;
+}
+#add-meal-block ul li span.current {
+    color: #2c662d;
+    font-weight: bold;
+}
+#add-meal-block ul li span:hover{
+    cursor: hand;
+    text-decoration: underline;
+}
+
+
+/*  Authentification Styles */
+#login-block, #register-block, #change-password-block,
+        #profile-block, #reset-password-block {
+    display: none;
+}
+
+.auth-data-link {
+    color: #567;
+    cursor: hand;
+    text-decoration: underline;
+    font-size: 12px;
+    margin-left: 20px;
+}
+.auth-data-link:hover {
+    color: #567;
+    cursor: hand;
+    text-decoration: none;
+}
+
+.auth-data {
+    margin: 20px;
+    padding: 10px;
+    border: 1px green dashed;
+}
+.auth-data.error {
+    border: 1px red dashed;
+}
+.auth-data div {
+    margin: 20px;
+    padding: 10px;
+    border: 1px lightgray dashed;
+}
+.auth-data div.error {
+    border: 1px #ff6b68 dashed;
+}
+.auth-data input {
+    box-shadow:inset 0 0 4px #eee;
+    width:250px;
+    margin-left:10px;
+    padding:6px 12px;
+    border-radius:4px;
+    border:1px solid silver;
+    font-size:0.9em;
+}
+
+.auth-data .error-text{
+    padding: 30px;
+    color: red;
+
+}

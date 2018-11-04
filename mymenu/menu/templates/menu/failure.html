@@ -1,0 +1,13 @@
+{% load staticfiles %}
+
+<title>Ошибка авторизации</title>
+<link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+
+<p>Ошибка авторизации:</p>
+<p>
+    {% if error == 'incorrect-email-confirm' %}
+        Просроченный или неверный код подтверждения e-mail <a href="{% url 'menu:index' %}">Повторить регистрацию?</a>
+    {% else %}
+        Проверьте корректность данных.
+    {% endif %}
+</p>

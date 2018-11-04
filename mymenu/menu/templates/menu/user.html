@@ -1,0 +1,88 @@
+{% load staticfiles %}
+
+<title>Профиль</title>
+<link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static 'menu/css/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'menu/css/noty.css' %}" />
+
+<div id="profile-block">
+    <div class="data-block-title-link">
+        <div class="data-block-title">
+            <h1>Профиль пользователя:</h1>
+            <a class="auth-data-link" onclick="MenuApp.profile.setType('change-password');">Изменить пароль</a>
+        </div>
+        <div class="data-block-link">
+            <a class="link" href="{% url 'menu:index' %}">Меню</a>
+            <a class="link" href="{% url 'menu:book' %}">Книга рецептов</a>
+            <a class="logout" onclick="MenuApp.common.logout()">Выход</a>
+        </div>
+    </div>
+
+    <div class="auth-data">
+        <form name="profileForm">
+            <div>
+                <span>Логин: </span>
+                <input type="text" name="username" value="" />
+                <span class="error-text"></span>
+            </div>
+            <div>
+                <span>Имя: </span>
+                <input type="text" name="first_name" value="" />
+                <span class="error-text"></span>
+            </div>
+            <div>
+                <span>Фамилия: </span>
+                <input type="text" name="last_name" value="" />
+                <span class="error-text"></span>
+            </div>
+            <div>
+                <button type="button" onclick="MenuApp.profile.changeProfile()">Изменить данные</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="change-password-block">
+    <div class="data-block-title-link">
+        <div class="data-block-title">
+            <h1>Изменение пароля:</h1>
+            <a class="auth-data-link" onclick="MenuApp.profile.setType('profile');">Профиль</a>
+        </div>
+        <div class="data-block-link">
+            <a class="link" href="{% url 'menu:index' %}">Меню</a>
+            <a class="link" href="{% url 'menu:book' %}">Книга рецептов</a>
+            <a class="logout" onclick="MenuApp.common.logout()">Выход</a>
+        </div>
+    </div>
+
+    <div class="auth-data">
+        <form name="changePasswordForm">
+            <div>
+                <span>Cтарый пароль: </span>
+                <input type="password" name="old_password" value="" />
+                <span class="error-text"></span>
+            </div>
+            <div>
+                <span>Новый пароль: </span>
+                <input type="password" name="new_password1" value="" />
+                <span class="error-text"></span>
+            </div>
+            <div>
+                <span>Повторите пароль: </span>
+                <input type="password" name="new_password2" value="" />
+                <span class="error-text"></span>
+            </div>
+            <div>
+                <button type="button" onclick="MenuApp.profile.changePassword()">Изменить</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<script type="text/javascript" src="{% static 'menu/js/jquery-3.2.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'menu/js/noty.min.js' %}"></script>
+<script src="{% static 'menu/js/common.js' %}"></script>
+<script src="{% static 'menu/js/user.js' %}"></script>

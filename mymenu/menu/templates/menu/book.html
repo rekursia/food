@@ -1,0 +1,66 @@
+{% load staticfiles %}
+
+<title>Книга рецептов</title>
+<link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static 'menu/css/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'menu/js/tree/dist/themes/default/style.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'menu/css/noty.css' %}" />
+
+
+<div class="data-block-title-link">
+    <div class="data-block-title">
+            <h1>Книга рецептов:</h1>
+        </div>
+        <div class="data-block-link">
+            <a class="link" href="{% url 'menu:index' %}">Планирование меню</a>
+            <a class="profile" href="{% url 'user' %}">Профиль</a>
+            <a class="logout" onclick="MenuApp.common.logout()">Выход</a>
+        </div>
+</div>
+
+<div class="container">
+    <div class="buttons-categories">
+        <div class="" style="float:left">
+            <button type="button" onclick="MenuApp.book.categoryAdd();">Создать</button>
+            <button type="button" onclick="MenuApp.book.categoryEdit();">Переименовать</button>
+            <button type="button" onclick="MenuApp.book.categoryDelete();">Удалить</button>
+        </div>
+        <div class="category-search">
+            <input id="category-search-input" type="text" value="" placeholder="Поиск" />
+        </div>
+    </div>
+    <div class="tree" id="tree">
+
+    </div>
+    <div class="data" id="data">
+        <div class="content default">
+            <div class="category-data"></div>
+            <div class="subcategories"></div>
+            <div class="meals-data"></div>
+        </div>
+    </div>
+</div>
+<div id="meal-data">
+    <a class="meal-data-link" onclick="MenuApp.book.closeMealForm()">Закрыть</a>
+    <form name="mealForm">
+        <input type="hidden" name="id" value="" />
+        <div>
+            <span>Название блюда: </span>
+            <input type="text" name="name" value="" />
+            <span class="error-text"></span>
+        </div>
+        <div>
+            <button type="button" onclick="MenuApp.book.saveMeal()">Сохранить</button>
+        </div>
+    </form>
+</div>
+
+
+<script type="text/javascript" src="{% static 'menu/js/jquery-3.2.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'menu/js/noty.min.js' %}"></script>
+<script src="{% static 'menu/js/tree/dist/jstree.min.js' %}"></script>
+<script src="{% static 'menu/js/common.js' %}"></script>
+<script src="{% static 'menu/js/book.js' %}"></script>
+
+

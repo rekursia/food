@@ -1,0 +1,102 @@
+{% load staticfiles %}
+
+<title>Авторизация</title>
+<link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static 'menu/css/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'menu/css/noty.css' %}" />
+
+
+<div id="login-block">
+    <div class="data-block-title-link">
+        <div class="data-block-title">
+            <h1>Авторизация:</h1>
+            <a class="auth-data-link" onclick="MenuApp.authorization.setType('registration');">Зарегистрироваться</a>
+            <a class="auth-data-link" onclick="MenuApp.authorization.setType('reset-password');">Восстановить пароль</a>
+        </div>
+    </div>
+
+    <div class="auth-data">
+        <form name="loginForm">
+            <div>
+                <span>Логин: </span>
+                <input type="text" name="username" value="" />
+                <span class="error-text"></span>
+            </div>
+            <div>
+                <span>Пароль: </span>
+                <input type="password" name="password" value="" />
+                <span class="error-text"></span>
+            </div>
+            <div>
+                <button type="button" onclick="MenuApp.authorization.login()">Войти</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="register-block">
+    <div class="data-block-title-link">
+        <div class="data-block-title">
+            <h1>Регистрация:</h1>
+            <a class="auth-data-link" onclick="MenuApp.authorization.setType('login');">Войти</a>
+            <a class="auth-data-link" onclick="MenuApp.authorization.setType('reset-password');">Восстановить пароль</a>
+        </div>
+    </div>
+
+    <div class="auth-data">
+        <form name="registerForm">
+            <div>
+                <span>Логин: </span>
+                <input type="text" name="username" value="" />
+                <span class="error-text"></span>
+            </div>
+            <div>
+                <span>Email: </span>
+                <input type="email" name="email" value="" />
+                <span class="error-text"></span>
+            </div>
+            <div>
+                <span>Пароль: </span>
+                <input type="password" name="password1" value="" />
+                <span class="error-text"></span>
+            </div>
+            <div>
+                <span>Повторите пароль: </span>
+                <input type="password" name="password2" value="" />
+                <span class="error-text"></span>
+            </div>
+            <div>
+                <button type="button" onclick="MenuApp.authorization.register()">Зарегистрироваться</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="reset-password-block">
+    <div class="data-block-title-link">
+        <div class="data-block-title">
+            <h1>Восстановить пароль:</h1>
+            <a class="auth-data-link" onclick="MenuApp.authorization.setType('login');">Войти</a>
+            <a class="auth-data-link" onclick="MenuApp.authorization.setType('registration');">Зарегистрироваться</a>
+        </div>
+    </div>
+
+    <div class="auth-data">
+        <form name="resetPasswordForm">
+            <div>
+                <span>Email: </span>
+                <input type="email" name="email" value="" />
+                <span class="error-text"></span>
+            </div>
+            <div>
+                <button type="button" onclick="MenuApp.authorization.resetPassword()">Восстановить</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="{% static 'menu/js/jquery-3.2.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'menu/js/noty.min.js' %}"></script>
+<script src="{% static 'menu/js/common.js' %}"></script>
+<script src="{% static 'menu/js/index.js' %}"></script>

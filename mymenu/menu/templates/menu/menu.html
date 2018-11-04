@@ -1,0 +1,75 @@
+{% load staticfiles %}
+
+<title>Планирование меню</title>
+<link rel="shortcut icon" href="{%  static 'favicon.ico' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static 'menu/css/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'menu/css/noty.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'menu/css/daterangepicker.min.css' %}" />
+
+<div class="data-block-title-link">
+    <div class="data-block-title">
+        <h1>Меню:</h1>
+    </div>
+    <div class="data-block-link">
+        <a class="link" href="{% url 'menu:book' %}">Книга рецептов</a>
+        <a class="profile" href="{% url 'user' %}">Профиль</a>
+        <a class="logout" onclick="MenuApp.common.logout()">Выход</a>
+    </div>
+</div>
+
+<div id="menu-block">
+
+    <div class="menu-list-data-block">
+
+        <div id="menu-list-data">&nbsp;</div>
+    </div>
+
+    <div class="choisen-menu-block">
+        <div id="choisen-menu">
+
+            <div class="choisen-menu-title-link">
+                <div class="choisen-menu-title">
+                    Планирование меню:
+                </div>
+                <div class="choisen-menu-manage">
+
+                </div>
+            </div>
+
+            <div class="menu-range">
+                <img id="menu-range-date" src="/static/menu/images/icons/splashyIcons/calendar_month.png" title="Выбрать даты" />
+                <span id="menu-range-date-choosen">Выберите период</span>
+            </div>
+
+            <p class="bold">Выбранные блюда:</p>
+            <p id="menu-list">Нет выбранных блюд</p>
+
+
+
+            <div class="add-meal-block-manage">
+                <img id="add-meal-block-manage-img" onclick="MenuApp.menu.turnDisplayMealsChoosen()" src="/static/menu/images/icons/splashyIcons/arrow_large_down.png" title="Открыть" />
+                <span>Добавить блюдо в меню</span>
+            </div>
+            <div id="add-meal-block">
+                <p class="bold">Выберите категорию:</p>
+                <div id="categories-data-0"></div>
+
+                <p class="bold">Выберите блюдо:</p>
+                <div class="meals-data"><p>Не выбрана категория</p></div>
+            </div>
+
+            <button class="save" onclick="MenuApp.menu.saveChoisenMenu()">Сохранить</button>
+            <button onclick="MenuApp.menu.clearChoisenMenu()">Очистить</button>
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript" src="{% static 'menu/js/jquery-3.2.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'menu/js/noty.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'menu/js/moment.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'menu/js/jquery.daterangepicker.min.js' %}"></script>
+<script src="{% static 'menu/js/common.js' %}"></script>
+<script src="{% static 'menu/js/menu.js' %}"></script>
