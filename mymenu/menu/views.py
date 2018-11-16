@@ -323,7 +323,7 @@ class MenuList(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        print('SE', serializer.errors)
+        #print('SE', serializer.errors)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class MenuDetail(APIView):
@@ -348,7 +348,6 @@ class MenuDetail(APIView):
 
     def put(self, request, menu_id, format=None):
         menu = self.get_object(request, menu_id)
-
         serializer = MenuSerializer(menu, data=request.data)
         if serializer.is_valid():
             serializer.save()

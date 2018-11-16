@@ -34,13 +34,7 @@ class Menu(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    meals = models.ManyToManyField('Meal')
 
     def __str__(self):
         return "%s -- %s" % (self.start_date, self.end_date)
-
-class MenuMeals(models.Model) :
-    menu = models.ForeignKey(Menu, on_delete=models.CASCADE, related_name='meals')
-    meal = models.ForeignKey(Meal, on_delete=models.CASCADE)
-
-    class Meta:
-        unique_together = (("menu", "meal"),)
